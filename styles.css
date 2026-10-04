@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --background-color: rgb(228, 222, 222);
+  --primary-color: rgb(231, 217, 230);
+  --accent-color: rgb(130, 221, 237);
+  --text-color: rgb(18, 16, 16);
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.navbar .logo {
+  color: rgb(177, 34, 163);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+.navbar nav a {
+  color: #333333;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.navbar nav a:hover,
+.navbar nav a.active {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+.card {
+  background-color: #ffffff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(11, 88, 102);
+}
+.profile-img {
+  width: 160px;
+  height: 170px;
+  border-radius: 70%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 15px;
+}
+.project-img {
+  width: 60%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.portfolio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 20px;
+}
+.project-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgb(11, 88, 102);
+}
+.profile-card p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: var(--primary-color);
+}
+.card ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+.card ul li {
+  margin-bottom: 8px;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  color: rgb(177, 34, 163);
+  font-size: 0.95rem;
+  margin-top: 40px;
+}
+.project-a {
+  grid-area: a;
+}
+.project-b {
+  grid-area: b;
+}
+.project-c {
+  grid-area: c;
+}
+.project-d {
+  grid-area: d;
+}
+.project-e {
+  grid-area: e;
+}
+
+@media (min-width: 768px) {
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      " a a b b"
+      "c c d d "
+      "e e e e";
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "a b c"
+      "d e .";
+    gap: 20px;
+  }
+}
